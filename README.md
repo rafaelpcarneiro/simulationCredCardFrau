@@ -1,7 +1,7 @@
 # Credit Card Fraud Simulation using a Non-homogeneous Poisson Process 
 
 ## Abstract
-The file *simulation.py* is in charge of simulating a sequence of interarrival
+The file **simulation.py** is in charge of simulating a sequence of interarrival
 request times _Tn_, following a nonhomogeneous Poisson Process, where for each
 time time _Tn_, the index _n_ is related to
 1. a client trying to buy a product of type 0 with his credit card.
@@ -17,18 +17,18 @@ At the end of the simulation we have a sequence _S0_, _S1_, _S2_, ..., of random
 variables, saved in a csv file.  The csv file consists of rows representing
 the times a credit card was used and the columns represent the main data
 desired. The column atributes are:
-* *clientID*: client's ID;
-* *buyID*: number identificating the credit card payment;
-* *time*: time when the payment was done;
-* *moneySpent*: amount of money spent;
-* *shop accepted*: a boolean value where _True_ means payment accepted anf _FALSE_
+* **clientID**: client's ID;
+* **buyID**: number identificating the credit card payment;
+* **time**: time when the payment was done;
+* **moneySpent**: amount of money spent;
+* **shop accepted**: a boolean value where _True_ means payment accepted anf _FALSE_
     otherwise;
-* *was a fraud*: a boolean value where _True_ means the payment attempt was comming 
-    from a fraud and _FALSE_ otherwise;
-* *store bought from*: the ID of the store where the credit card was used;
-* *type product*: type of the product bought;
-* *place where cc was used x*: x coordinate of the store's place
-* *place where cc was used y*: y coordinate of the store's place
+* **was a fraud**: a boolean value where _True_ means the payment attempt was comming 
+     from a fraud and _FALSE_ otherwise;
+* **store bought from**: the ID of the store where the credit card was used;
+* **type product**: type of the product bought;
+* **place where cc was used x**: x coordinate of the store's place
+* **place where cc was used y**: y coordinate of the store's place
 
 ## How the simulation works
 
