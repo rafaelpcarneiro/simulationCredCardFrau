@@ -2,8 +2,8 @@
 
 ## Abstract
 The file **simulation.py** is in charge of simulating a sequence of interarrival
-request times _Tn_, following a nonhomogeneous Poisson Process, where for each
-time time _Tn_, the index _n_ is related to
+times, _Tn_, from a nonhomogeneous Poisson Process, where for each
+time _Tn_, the index _n_ is related to
 1. a client trying to buy a product of type 0 with his credit card.
    Such event happens  with probability p0;
 2. a client trying to buy a product of type 1 with his credit card.
@@ -14,7 +14,7 @@ time time _Tn_, the index _n_ is related to
 (constraint p0 + p1 + p2 == 1)
 
 At the end of the simulation we have a sequence _S0_, _S1_, _S2_, ..., of random
-variables, saved in a csv file.  The csv file consists of rows representing
+variables, saved in a csv file.  The csv's rows represent
 the times a credit card was used and the columns represent the main data
 desired. The column atributes are:
 * **clientID**: client's ID;
@@ -32,12 +32,14 @@ desired. The column atributes are:
 
 ## How the simulation works
 
-Let _Tn_ be a sequence of iterarrival times following a nonhomogeneous 
+Let _Tn_ be a sequence of iterarrival times from a nonhomogeneous 
 Poisson Process with intensity function I(t). The intensity function will
-measure the rate of payments in the period of one day and  the one
-used by me is proportional with the amount of clients in the 
+measure the rate of payments in the period of one day.
+
+The function I(t) used by me is proportional with the amount of clients in the 
 simulation and a probability density function. For an amount of 20000 clients,
 it looks like this
+
 ![intensity function](intensity_func.png)
 
 
