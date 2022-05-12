@@ -34,9 +34,8 @@ desired. The column atributes are:
 
 Let _Tn_ be a sequence of iterarrival times from a nonhomogeneous 
 Poisson Process with intensity function I(t). The intensity function will
-measure the rate of payments in the period of one day.
-
-The function I(t) used by me is proportional with the amount of clients in the 
+measure the rate of payments in the period of one day and
+the one used by me is a mix of the amount of clients in the 
 simulation and a probability density function. For an amount of 20000 clients,
 it looks like this
 
