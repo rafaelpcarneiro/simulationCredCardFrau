@@ -2,7 +2,7 @@
 
 ## Abstract
 The file **simulation.py** is in charge of simulating a sequence of interarrival
-times, _Tn_, from a nonhomogeneous Poisson Process, where for each
+times, _Tn_, from a nonhomogeneous Poisson Process where for each
 time _Tn_, the index _n_ is related to
 1. a client trying to buy a product of type 0 with his credit card.
    Such event happens  with probability p0;
