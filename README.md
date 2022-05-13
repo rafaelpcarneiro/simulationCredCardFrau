@@ -28,8 +28,8 @@ with B[0, R'] the closed ball under the norm
     |x| = max {x<sub>1</sub>, x<sub>2</sub>}.
 </div>
 
-Such city has a population of **N** clients and a population
-of **N<sub>1</sub>** stores of type 1 and
+Such city has a population of **N** clients, a population
+of **N<sub>1</sub>** stores of type 1 and, finally, a population of
 **N<sub>2</sub>** stores of type 2. Here a store is said to be of type 1 or 2
 if
 * store of type 1 ⇔ the store sells essential goods such as food, gas, ...
@@ -41,7 +41,7 @@ depicted in the Figure below.
 
 <div align='center'>
     <img src='figures/scheme.png'
-         width='150px'
+         width='300px'
          alt='city example'
     />
 </div>
