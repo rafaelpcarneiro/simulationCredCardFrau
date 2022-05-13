@@ -137,6 +137,7 @@ Given the situation
 
 We must run at python3
 ```
+from simulation import *
 simulation = fraudSimulation(amount_of_days  = 360,
                              clientsPopSize  = 1_000,
                              storesPopSize   = 100,
@@ -146,6 +147,28 @@ simulation.print_to_csv('sim.dat')
 ```
 
 Then the file _sim.dat_ will have the results of the simulation.
+
+## An example of outcome
+Setting
+```
+simulation = fraudSimulation(amount_of_days  = 360 * 5,
+                             clientsPopSize  = 10_000,
+                             storesPopSize   = 2_000,
+                             ball_radius_R   = 80_000)
+```
+
+We ended with the following time series
+<div align='center'>
+    <img src='figures/simulation_notfraud00.png*'
+         width='500px'
+    />
+</div>
+
+<div align='center'>
+    <img src='figures/simulation_fraud00.png*'
+         width='500px'
+    />
+</div>
 
 ## Assumptions
 
