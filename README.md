@@ -159,13 +159,13 @@ simulation = fraudSimulation(amount_of_days  = 360 * 5,
 
 We ended with the following time series
 <div align='center'>
-    <img src='figures/simulation_notfraud00.png*'
+    <img src='figures/simulation_notfraud00.png'
          width='500px'
     />
 </div>
 
 <div align='center'>
-    <img src='figures/simulation_fraud00.png*'
+    <img src='figures/simulation_fraud00.png'
          width='500px'
     />
 </div>
