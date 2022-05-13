@@ -3,14 +3,13 @@
 ## Intro
 The File **simulation.py** contains all classes necessaries for the simulation.
 They are:
-* simulationAssumptions
+* <ins>simulationAssumptions</ins>
+    It handle all assumptions made for the simulation
 * nonhomogeneous_PoissonProcess
 * clients
 * stores
 * fraudSimulation
 
->  simulationAssumptions
-> > It handle all assumptions made for the simulation
 
 > nonhomogeneous_PoissonProcess
 > > The class responsible for generating arriving times from a non-homogeneous
