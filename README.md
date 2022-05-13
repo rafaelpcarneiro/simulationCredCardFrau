@@ -46,13 +46,16 @@ depicted in the Figure below.
     />
 </div>
 
-Each person has one house, allocated randomily. Also, it is supposed that there
+Each person has one house whose position is allocated randomily at the city.
+Also, it is supposed that there
 is a radius _R_ > 0 where the person is more likely to be from his/her home.
+At the same way, stores of type 1 and 2 have their localisation allocated
+randomily throughout the city.
 
 Now we need to attach the events of payments into this model.
-This is done with the assistanceof the nonhomogeneous Poisson Process.
+This is done with the assistance of the nonhomogeneous Poisson Process.
 
-Let _Tn_ be the time of the _nth_ payment using a credit card (following,
+Let _T<sub>n</sub>_ be the time of the _nth_ payment using a credit card (following,
 as already said, a nonhomogeneous Poisson Process).
 
 <div align='center'>
@@ -62,15 +65,51 @@ as already said, a nonhomogeneous Poisson Process).
     />
 </div>
 
-time _Tn_, the index _n_ is related to
-1. a client trying to buy a product of type 0 with his credit card.
+At each time _T<sub>n</sub>_ we mark with a multinomial random variable _Y<sub>n</sub>_
+(iid from all others random variables).
+The random variable _Y<sub>n</sub>_ is equivalent to tossing a coin whose values
+can be either
+1. the nth payment is referent to a  product of type 0.
    Such event happens  with probability p0;
-2. a client trying to buy a product of type 1 with his credit card.
+2. or the nth payment is referent to a  product of type 1.
    Such event happens  with probability p1;
-3. a thief trying to buy a product of type 0 or 1 with a false credit card.
+3. or a thief is trying to buy a product of type 0 or 1 with a false credit card.
    Such event happens  with probability p2;
 
 (constraint p0 + p1 + p2 == 1)
+
+Finally, the simulation happens in the following manner
+1. wait for a payment time _T<sub>n</sub> with a credit card;
+2. toss a coin _Y<sub>n</sub>_;
+3. if the coin is not equal to a fraud then
+    1. choose randomily a position to a person _X_. This person
+       _X_ is, also, choosen randomily, and the likelihood of being
+       chosen is in function of his/her credit card limit for the month;
+    2. choose randomily what kind of product the person _X_ is going
+       to buy. It can be an essentiall good or nonessential;
+    3. After choosing the type of product the person will choose a store
+       that has a better price and is not that far away from _X_.
+       In the end, the choise is reduced to a minimization problem
+       where the loss function has as parameters price and distance;
+    4. Now if the payment doesn't surpass the person's credit card limit
+       then the payment will be tagged as accepted. In case contrary it will
+       be denied the payment and it will be flagged as not accepted.
+4. if the coin is equal to a fraud then
+    1. choose randomily a position and a person _X_. This person
+       _X_ will have his/her credit card used for the fraud
+    2. choose randomily what kind of product  is going
+       to buy buy the thieve. It can be an essentiall good or nonessential;
+    3. Now if the payment doesn't surpass the person's credit card limit
+       then the payment will be tagged as accepted. In case contrary it will
+       be denied the payment and it will be flagged as not accepted;
+    4. Many more attempts of payments will be done with the same credit 
+       card in a small range of time. Such time is given by a geometric
+       distribution with low probabilty;
+    5. All fraud payments are flagged as fraud;
+5. Continue this process untill the period of time under study is over.
+
+
+## The outcome of the simulation
 
 At the end of the simulation we have a sequence _S0_, _S1_, _S2_, ..., of random
 variables, saved in a csv file.  The csv's rows represent
@@ -89,27 +128,35 @@ desired. The column atributes are:
 * **place where cc was used x**: x coordinate of the store's place
 * **place where cc was used y**: y coordinate of the store's place
 
-## How the simulation works
+## How to run the simulation
+Given the situation
+* A city of radius R = 10000km;
+* A population of 1000 clients;
+* An amount of 100 stores (summing the ones of type 0 and 1);
+* A period of 360 days;
 
-Let _Tn_ be a sequence of iterarrival times from a nonhomogeneous 
-Poisson Process with intensity function I(t). The intensity function will
-measure the rate of payments in the period of one day and
-the one used by me is a mix of the amount of clients in the 
-simulation and a probability density function. For an amount of 20000 clients,
+We must run at python3
+```
+simulation = fraudSimulation(amount_of_days  = 360,
+						     clientsPopSize  = 1_000,
+                             storesPopSize   = 100,
+							 ball_radius_R   = 10_000)
+simulation.runSim()
+simulation.print_to_csv('sim.dat')
+```
+
+Then the file _sim.dat_ will have the results of the simulation.
+
+## Assumptions
+
+### Intensity function
+
+The intensity function for the nonhomogeneous Poisson Process will
+measure the rate of payments in the period of one day.
+
+The one used by me is a mix of the amount of clients in the 
+simulation and a probability density function. 
+For an amount of 20000 clients,
 it looks like this
 
 ![intensity function](intensity_func.png)
-
-
-## Assumptions for the simulation
-The assumptions are listed down below
-1. A client can only buy two kinds of products, called 'essential goods' and 
-   'nonessential goods'. 'Essential goods' are products related with products
-   considered essential for living, such as food, refueling, restaurants, ...
-   Meanwile, 'Nonessential goods' are products like eletronic devices, toys,...
-   I just set these two categories for the simulation in order to have a better
-   control on how each client would spend his money;
-2. A credit card payment will be flaged 
-    * 'essential' with probability
-2. The probabilities for the categorical values 'essential good', 'nonessential
-   good' and 'fraud' are
