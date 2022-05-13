@@ -1,8 +1,40 @@
 # Credit Card Fraud Simulation using a Non-homogeneous Poisson Process 
 
-## Abstract
-The file **simulation.py** is in charge of simulating a sequence of interarrival
-times, _Tn_, from a nonhomogeneous Poisson Process where for each
+## Intro
+The File **simulation.py** contains all classes necessaries for the simulation.
+They are:
+* simulationAssumptions
+* nonhomogeneous_PoissonProcess
+* clients
+* stores
+* fraudSimulation
+
+>  simulationAssumptions
+> > It handle all assumptions made for the simulation
+
+> nonhomogeneous_PoissonProcess
+> > The class responsible for generating arriving times from a non-homogeneous
+> > Poisson Process
+
+> clients
+> > a class taking care about the info regarding all clients
+
+> stores
+> > a class taking care about the info regarding all stores
+
+> fraudSimulation 
+> > the main class responsible to tie all classes together to run the simulation.
+
+## The simulation model
+
+Consider a city _C = B[0, R'] ⊂ R<sup>2</sup> _, with _B[0, R']_
+the closed ball under the norm
+<div align='center'>
+|x| = max {x<sub>1</sub>, x<sub>2</sub>}.
+</div>
+
+
+Let, _Tn_, from a nonhomogeneous Poisson Process where for each
 time _Tn_, the index _n_ is related to
 1. a client trying to buy a product of type 0 with his credit card.
    Such event happens  with probability p0;
