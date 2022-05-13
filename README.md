@@ -138,9 +138,9 @@ Given the situation
 We must run at python3
 ```
 simulation = fraudSimulation(amount_of_days  = 360,
-						     clientsPopSize  = 1_000,
+                             clientsPopSize  = 1_000,
                              storesPopSize   = 100,
-							 ball_radius_R   = 10_000)
+                             ball_radius_R   = 10_000)
 simulation.runSim()
 simulation.print_to_csv('sim.dat')
 ```
@@ -159,4 +159,10 @@ simulation and a probability density function.
 For an amount of 20000 clients,
 it looks like this
 
-![intensity function](intensity_func.png)
+<div align='center'>
+    <img src='figures/intensity_func.png'
+         width='500px'
+         alt='intensity function'
+    />
+</div>
+
