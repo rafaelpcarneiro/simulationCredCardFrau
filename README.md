@@ -3,39 +3,17 @@
 ## Intro
 The File **simulation.py** contains all classes necessaries for the simulation.
 They are:
-<dl>
- <dt>
-    <ins>simulationAssumptions</ins> 
- </dt>
- <dd> 
-   It handle all assumptions made for the simulation
- </dd> 
- <dt>
-    <ins>nonhomogeneous_PoissonProcess</ins> 
- </dt>
- <dd> 
++ *simulationAssumptions*:
+    It handle all assumptions made for the simulation
++ *nonhomogeneous_PoissonProcess*:
     The class responsible for generating arriving times from a non-homogeneous
     Poisson Process
- </dd> 
- <dt>
-    <ins>clients</ins> 
- </dt>
- <dd> 
-    a class taking care about the info regarding all clients
- </dd> 
- <dt>
-    <ins>stores</ins> 
- </dt>
- <dd> 
-    a class taking care about the info regarding all stores
- </dd> 
- <dt>
-    <ins>fraudSimulation</ins> 
- </dt>
- <dd> 
++ *clients*:
+    a class taking care of all clients' info
++ *stores*:
+    a class taking care of all stores' info
++ *fraudSimulation*:
     the main class responsible to tie all classes together to run the simulation.
- </dd> 
-</dl>
 
 
 
