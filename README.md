@@ -46,10 +46,22 @@ depicted in the Figure below.
     />
 </div>
 
+Each person has one house, allocated randomily. Also, it is supposed that there
+is a radius _R_ > 0 where the person is more likely to be from his/her home.
 
+Now we need to attach the events of payments into this model.
+This is done with the assistanceof the nonhomogeneous Poisson Process.
 
+Let _Tn_ be the time of the _nth_ payment using a credit card (following,
+as already said, a nonhomogeneous Poisson Process).
 
-Let, _Tn_, from a nonhomogeneous Poisson Process where for each
+<div align='center'>
+    <img src='figures/ppp.png'
+         width='300px'
+         alt='poisson process'
+    />
+</div>
+
 time _Tn_, the index _n_ is related to
 1. a client trying to buy a product of type 0 with his credit card.
    Such event happens  with probability p0;
