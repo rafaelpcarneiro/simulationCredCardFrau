@@ -3,31 +3,50 @@
 ## Intro
 The File **simulation.py** contains all classes necessaries for the simulation.
 They are:
-+ *simulationAssumptions*:
++ **simulationAssumptions**:
     It handle all assumptions made for the simulation
-+ *nonhomogeneous_PoissonProcess*:
++ **nonhomogeneous_PoissonProcess**:
     The class responsible for generating arriving times from a non-homogeneous
     Poisson Process
-+ *clients*:
++ **clients**:
     a class taking care of all clients' info
-+ *stores*:
++ **stores**:
     a class taking care of all stores' info
-+ *fraudSimulation*:
++ **fraudSimulation**:
     the main class responsible to tie all classes together to run the simulation.
 
-
-
-
-
- 
+Below I explain the mathematical assumptions made for me to perform the simulation
 
 ## The simulation model
 
-Consider a city _C = B[0, R'] ⊂ R<sup>2</sup> _, with _B[0, R']_
-the closed ball under the norm
+Consider a city 
 <div align='center'>
-|x| = max {x<sub>1</sub>, x<sub>2</sub>}.
+    C = B[0, R'] ⊂ R<sup>2</sup> ,
 </div>
+with B[0, R'] the closed ball under the norm
+<div align='center'>
+    |x| = max {x<sub>1</sub>, x<sub>2</sub>}.
+</div>
+
+Such city has a population of **N** clients and a population
+of **N<sub>1</sub>** stores of type 1 and
+**N<sub>2</sub>** stores of type 2. Here a store is said to be of type 1 or 2
+if
+* store of type 1 ⇔ the store sells essential goods such as food, gas, ...
+* store of type 2 ⇔ the store sells nonessential goods such as eletronic gadgets,
+    toys, etc.
+
+To fix the idea, lets assume the case with only one person in the city, as 
+depicted in the Figure below.
+
+<div align='center'>
+    <img src='figures/scheme.png'
+         width='150px'
+         alt='city example'
+    />
+</div>
+
+
 
 
 Let, _Tn_, from a nonhomogeneous Poisson Process where for each
