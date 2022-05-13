@@ -57,7 +57,7 @@ as already said, a nonhomogeneous Poisson Process).
 
 <div align='center'>
     <img src='figures/ppp.png'
-         width='300px'
+         width='500px'
          alt='poisson process'
     />
 </div>
