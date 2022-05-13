@@ -148,7 +148,7 @@ simulation.print_to_csv('sim.dat')
 
 Then the file _sim.dat_ will have the results of the simulation.
 
-## An example of outcome
+## An example obtained after running **simulation.py**
 Setting
 ```
 simulation = fraudSimulation(amount_of_days  = 360 * 5,
