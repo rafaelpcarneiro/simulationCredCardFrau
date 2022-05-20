@@ -937,6 +937,8 @@ class fraudSimulation:
 					coin      = next(coinGenerator)
 					client_i  = next(choose_client)
 
+					print (T_n)
+
 					if coin == 'fraud':
 						sequenceTimes = next(frauds_in_a_row)
 
@@ -987,7 +989,7 @@ class fraudSimulation:
 								storeID                 = j ,
 								was_a_fraud             = True,
 								place_where_cc_was_used = place_where_cc_was_used,
-								time                    = (day-1) * 24.0 + T_n
+								time                    = day * 24.0 + T_n
 							)
 							T_n       = next(simGenerator)
 					else:
@@ -1015,7 +1017,7 @@ class fraudSimulation:
 							storeID                 = ticket[0] ,
 							was_a_fraud             = False,
 							place_where_cc_was_used = place_where_cc_was_used,
-							time                    = (day-1) * 24.0 + T_n
+							time                    = day * 24.0 + T_n
 						)
 
 				except:
